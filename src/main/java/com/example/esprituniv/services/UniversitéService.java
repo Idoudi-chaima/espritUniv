@@ -1,6 +1,8 @@
 package com.example.esprituniv.services;
 
+import com.example.esprituniv.entities.Foyer;
 import com.example.esprituniv.entities.Universite;
+import com.example.esprituniv.repository.FoyerRepository;
 import com.example.esprituniv.repository.UniversiteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,29 +13,43 @@ import java.util.List;
 @AllArgsConstructor
 public class UniversitéService implements IUniversiteService{
     UniversiteRepository universiteRepository;
+    FoyerRepository foyerRepository;
 
     @Override
     public List<Universite> retrieveAllUniversities() {
-        return null;
+        return universiteRepository.findAll();
     }
 
     @Override
     public Universite addUniversity(Universite u) {
-        return null;
+       return universiteRepository.save(u);
     }
 
     @Override
     public Universite updateUniversity(Universite u) {
-        return null;
+        return universiteRepository.save(u);
     }
 
     @Override
     public Universite retrieveUniversity(long idUniversity) {
-        return null;
+        return universiteRepository.findById(idUniversity).get();
     }
 
     @Override
     public void removeUniversity(long idUniversity) {
+        universiteRepository.deleteById(idUniversity);
 
     }
-}
+
+    @Override
+    public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite) {
+        Universite universite = universiteRepository.findByNomUniversite(nomUniversite);
+        Foyer foyer = foyerRepository.findById(idFoyer).get();
+        universite.setFoyer(foyer);
+        universiteRepository.save(universite);
+        return universite;
+    }
+
+    }
+
+

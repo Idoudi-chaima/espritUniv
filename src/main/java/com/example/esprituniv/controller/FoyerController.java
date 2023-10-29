@@ -1,7 +1,9 @@
 package com.example.esprituniv.controller;
 
 import com.example.esprituniv.entities.Foyer;
+import com.example.esprituniv.entities.Universite;
 import com.example.esprituniv.services.IFoyerService;
+import com.example.esprituniv.services.IUniversiteService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +14,10 @@ import java.util.List;
 @RequestMapping("/foyer")
 public class FoyerController {
     IFoyerService foyerService;
+    IUniversiteService universiteService;
 
     @GetMapping("/retrieveAllFoyers")
-    List<Foyer> retrieveAllFoyers(){
+   public  List<Foyer> retrieveAllFoyers(){
         List<Foyer>foyerList=foyerService.retrieveAllFoyers();
         return foyerList;
     }
@@ -33,9 +36,15 @@ public class FoyerController {
         public Foyer retrieveFoyer(@PathVariable ("foyer-id") Long idFoyer){
         return  foyerService.retrieveFoyer(idFoyer);
     }
+
+    @DeleteMapping("/removeFoyer")
+        void removeFoyer(@PathVariable("foyer-id") Long idFoyer) { foyerService.removeFoyer(idFoyer);}
+
     @DeleteMapping ("/archiverFoyer/{foyer-id}")
      void archiverFoyer(@PathVariable("foyer-id") Long idFoyer){
         foyerService.archiverFoyer(idFoyer);
     }
+
+
 
 }

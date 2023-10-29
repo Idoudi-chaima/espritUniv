@@ -44,5 +44,32 @@ public class Foyer implements Serializable {
     public void setCapaciteFoyer(long capaciteFoyer) {
         this.capaciteFoyer = capaciteFoyer;
     }
+
+    public List<Bloc> getBlocs() {
+        return blocs;
+    }
+
+    public void setBlocs(List<Bloc> blocs) {
+        this.blocs = blocs;
+    }
+
+    public Universite getUniversite() {
+        return universite;
+    }
+
+    public void setUniversite(Universite universite) {
+        this.universite = universite;
+    }
+
+    public Foyer(long idFoyer, String nomFoyer, long capaciteFoyer, List<Bloc> blocs, Universite universite) {
+        this.idFoyer = idFoyer;
+        this.nomFoyer = nomFoyer;
+        this.capaciteFoyer = capaciteFoyer;
+        this.blocs = blocs;
+        this.universite = universite;
+    }
+
+    public Foyer() {
+    }
 }
 

@@ -18,6 +18,16 @@ public class Universite implements Serializable {
     @OneToOne
     private Foyer foyer;
 
+    public Universite(Long idUniversite, String nomUniversite, String adresse, Foyer foyer) {
+        this.idUniversite = idUniversite;
+        this.nomUniversite = nomUniversite;
+        this.adresse = adresse;
+        this.foyer = foyer;
+    }
+
+    public Universite() {
+    }
+
     public Long getIdUniversite() {
         return idUniversite;
     }
@@ -40,5 +50,13 @@ public class Universite implements Serializable {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    public Foyer getFoyer() {
+        return foyer;
+    }
+
+    public void setFoyer(Foyer foyer) {
+        this.foyer = foyer;
     }
 }
