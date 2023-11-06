@@ -22,6 +22,7 @@ public class Chambre implements Serializable {
     @ManyToOne
     private Bloc bloc;
 
+
     public long getIdChambre() {
         return idChambre;
     }
@@ -44,6 +45,22 @@ public class Chambre implements Serializable {
 
     public void setTypeChambre(TypeChambre typeChambre) {
         this.typeChambre = typeChambre;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+
+    public Bloc getBloc() {
+        return bloc;
+    }
+
+    public void setBloc(Bloc bloc) {
+        this.bloc = bloc;
     }
 
     //@OneToMany(cascade = CascadeType.ALL)

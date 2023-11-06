@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
+   public Etudiant findEtudiantByNomEtAndPrenomEt(String nomEt, String prenomEt);
 }

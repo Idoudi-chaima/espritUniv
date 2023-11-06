@@ -70,4 +70,12 @@ public class Etudiant implements Serializable {
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }

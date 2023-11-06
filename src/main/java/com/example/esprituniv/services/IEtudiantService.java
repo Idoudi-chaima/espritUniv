@@ -17,4 +17,6 @@ public interface IEtudiantService {
     Etudiant retrieveEtudiant(Long idEtudiant);
 
     void removeEtudiant(Long idEtudiant);
+
+    Etudiant affecterEtudiantAReservation (String nomEt, String prenomEt, Long idReservation) ;
 }

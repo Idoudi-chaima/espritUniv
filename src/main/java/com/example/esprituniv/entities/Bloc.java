@@ -15,7 +15,7 @@ public class Bloc implements Serializable {
     private String nomBloc;
     private long capaciteBloc;
 
-    @OneToMany (mappedBy = "bloc")
+    @OneToMany (mappedBy = "bloc", cascade = CascadeType.ALL)
     private List<Chambre> chambres;
 
     @ManyToOne
@@ -43,6 +43,22 @@ public class Bloc implements Serializable {
 
     public void setCapaciteBloc(long capaciteBloc) {
         this.capaciteBloc = capaciteBloc;
+    }
+
+    public List<Chambre> getChambres() {
+        return chambres;
+    }
+
+    public void setChambres(List<Chambre> chambres) {
+        this.chambres = chambres;
+    }
+
+    public Foyer getFoyer() {
+        return foyer;
+    }
+
+    public void setFoyer(Foyer foyer) {
+        this.foyer = foyer;
     }
 }
 

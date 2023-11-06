@@ -1,5 +1,6 @@
 package com.example.esprituniv.controller;
 
+import com.example.esprituniv.entities.Bloc;
 import com.example.esprituniv.entities.Chambre;
 import com.example.esprituniv.services.IChambreService;
 import lombok.AllArgsConstructor;
@@ -34,6 +35,10 @@ public class ChambreController {
         return  chambre;
     }
 
+    @PutMapping("/affecter-chambre-bloc/{nom-bloc}")
+    public void affecterChambreABloc(@PathVariable("nom-bloc") String nomBloc, @RequestBody List<Long> numChambre){
+        chambreService.affecterChambreABloc(numChambre, nomBloc);
+    }
 
 
 }

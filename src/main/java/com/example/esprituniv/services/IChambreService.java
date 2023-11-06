@@ -1,5 +1,6 @@
 package com.example.esprituniv.services;
 
+import com.example.esprituniv.entities.Bloc;
 import com.example.esprituniv.entities.Chambre;
 
 import java.util.List;
@@ -12,4 +13,7 @@ public interface IChambreService {
     Chambre updateChambre (Chambre c);
 
     Chambre retrieveChambre (long idChambre);
+
+
+    Bloc affecterChambreABloc(List<Long> numChambre, String nomBloc);
 }

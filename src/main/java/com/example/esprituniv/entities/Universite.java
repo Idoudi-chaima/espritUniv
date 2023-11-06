@@ -15,7 +15,7 @@ public class Universite implements Serializable {
     private String nomUniversite;
     private String adresse;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     private Foyer foyer;
 
     public Universite(Long idUniversite, String nomUniversite, String adresse, Foyer foyer) {

@@ -2,6 +2,7 @@ package com.example.esprituniv.services;
 
 import com.example.esprituniv.entities.Foyer;
 import com.example.esprituniv.entities.Universite;
+import com.example.esprituniv.repository.BlocRepository;
 import com.example.esprituniv.repository.FoyerRepository;
 import com.example.esprituniv.repository.UniversiteRepository;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 public class FoyerService  implements IFoyerService {
 
     FoyerRepository foyerRepository;
+    BlocRepository blocRepository;
 
 
     @Override
@@ -47,6 +49,8 @@ public class FoyerService  implements IFoyerService {
     public void archiverFoyer(long idFoyer) {
 
     }
+
+
 
 
 }

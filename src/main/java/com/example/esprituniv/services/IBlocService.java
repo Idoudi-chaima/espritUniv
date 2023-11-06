@@ -1,6 +1,8 @@
 package com.example.esprituniv.services;
 
 import com.example.esprituniv.entities.Bloc;
+import com.example.esprituniv.entities.Chambre;
+import com.example.esprituniv.entities.Foyer;
 
 import java.util.List;
 
@@ -13,6 +15,6 @@ public interface IBlocService {
 
     Bloc retrieveBloc (long idBloc);
 
-    void archiverBloc (long idBloc); // ajouter un attribut boolean archived dans l'entité
-   // Bloc, Par défault false et le modifier à true suite à l'exécution de ce service
+
+    Foyer addFoyerWithBloc(Foyer f);
 }

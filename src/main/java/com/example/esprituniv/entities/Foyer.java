@@ -1,5 +1,6 @@
 package com.example.esprituniv.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -15,7 +16,8 @@ public class Foyer implements Serializable {
     private String nomFoyer;
     private long capaciteFoyer;
 
-    @OneToMany (mappedBy = "foyer")
+    @OneToMany (mappedBy = "foyer" , cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Bloc> blocs;
 
     @OneToOne (mappedBy = "foyer")

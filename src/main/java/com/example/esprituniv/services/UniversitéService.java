@@ -50,6 +50,14 @@ public class UniversitéService implements IUniversiteService{
         return universite;
     }
 
+    @Override
+    public Universite desaffecterFoyerAUniversite(long idFoyer, long idUniversite) {
+        Universite universite = universiteRepository.findById(idUniversite).get();
+        Foyer foyer = foyerRepository.findById(idFoyer).get();
+        universite.setFoyer(null);
+        return universite;
     }
+
+}
 
 

@@ -1,7 +1,9 @@
 package com.example.esprituniv.controller;
 
 import com.example.esprituniv.entities.Bloc;
+import com.example.esprituniv.entities.Foyer;
 import com.example.esprituniv.services.IBlocService;
+import com.example.esprituniv.services.IFoyerService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,7 @@ import java.util.List;
 @RequestMapping("/bloc")
 public class BlocController {
     IBlocService blocService;
+   IFoyerService foyerService;
     @GetMapping("/retrieveBlocs")
      public List<Bloc> retrieveBlocs(){
          List<Bloc> Blocs = blocService.retrieveBlocs();
@@ -34,6 +37,13 @@ public class BlocController {
     public Bloc retrieveBloc(@PathVariable("id-bloc") Long idBloc){
         Bloc bloc = blocService.retrieveBloc(idBloc);
         return bloc;
+    }
+
+    @PostMapping("/addFoyerWithBloc")
+    public Foyer addFoyerWithBloc(@RequestBody Foyer f){
+        Foyer foyer = blocService.addFoyerWithBloc(f);
+        return foyer;
+
     }
 
 

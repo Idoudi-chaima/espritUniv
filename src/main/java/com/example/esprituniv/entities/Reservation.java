@@ -16,8 +16,9 @@ public class Reservation implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date anneeUniversitaire;
 
-    @ManyToMany (mappedBy = "reservations")
+    @ManyToMany (mappedBy = "reservations" ,cascade = CascadeType.ALL)
     private List<Etudiant> etudiants;
+
 
     public long getIdReservation() {
         return idReservation;
@@ -35,5 +36,11 @@ public class Reservation implements Serializable {
         this.anneeUniversitaire = anneeUniversitaire;
     }
 
+    public List<Etudiant> getEtudiants() {
+        return etudiants;
+    }
 
+    public void setEtudiants(List<Etudiant> etudiants) {
+        this.etudiants = etudiants;
+    }
 }

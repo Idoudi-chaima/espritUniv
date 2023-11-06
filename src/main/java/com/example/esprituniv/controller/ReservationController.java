@@ -21,7 +21,7 @@ public class ReservationController {
         return  reservation;
     }
 
-    @GetMapping("/")
+    @GetMapping("/retrieveReservation")
     public Reservation retrieveReservation(long idReservation){
         Reservation reservation = reservationService.retrieveReservation(idReservation);
         return reservation;
